@@ -1,0 +1,32 @@
+{
+  "name": "faza-ai-chatbot",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Advanced AI Chatbot Application with Glassmorphism Design",
+  "author": "Faza.Ai Team",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@google/generative-ai": "^0.3.0",
+    "lucide-react": "^0.344.0",
+    "react-markdown": "^9.0.0",
+    "remark-gfm": "^4.0.0",
+    "highlight.js": "^11.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "tailwindcss": "^3.3.6",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16"
+  }
+}
