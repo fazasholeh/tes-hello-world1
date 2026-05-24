@@ -1,0 +1,251 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ======================== */
+/* Global Styles & Resets   */
+/* ======================== */
+
+* {
+  @apply transition-colors duration-250;
+}
+
+html, body {
+  @apply h-full overflow-hidden;
+}
+
+body {
+  @apply bg-gradient-mesh text-slate-50;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================== */
+/* Scrollbar Styling        */
+/* ======================== */
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-glass-light rounded-lg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-accent rounded-lg hover:bg-purple-dark transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-dark;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-color: #7c3aed #ffffff0d;
+  scrollbar-width: thin;
+}
+
+/* ======================== */
+/* Glassmorphism Components */
+/* ======================== */
+
+.glass-container {
+  @apply backdrop-blur-xl bg-glass-light border border-glass rounded-2xl shadow-glass;
+}
+
+.glass-card {
+  @apply backdrop-blur-lg bg-glass border border-glass rounded-xl shadow-glass hover:shadow-glass-lg transition-all duration-300;
+}
+
+.glass-button {
+  @apply px-4 py-2 rounded-lg bg-glass-light border border-glass hover:bg-glass-light/80 transition-all duration-250 cursor-pointer backdrop-blur-lg;
+}
+
+.glass-input {
+  @apply w-full bg-glass-light border border-glass rounded-lg px-4 py-2 text-slate-50 placeholder-slate-400 focus:outline-none focus:border-purple-accent focus:shadow-neon-purple backdrop-blur-lg transition-all duration-250;
+}
+
+/* ======================== */
+/* Text & Typography        */
+/* ======================== */
+
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-accent via-purple-dark to-deep-blue bg-clip-text text-transparent;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold text-gradient;
+}
+
+.heading-md {
+  @apply text-xl md:text-2xl font-semibold text-slate-50;
+}
+
+.text-sm-secondary {
+  @apply text-sm text-slate-300;
+}
+
+/* ======================== */
+/* Chat Message Styling     */
+/* ======================== */
+
+.message-user {
+  @apply flex justify-end mb-3 animate-slide-up;
+}
+
+.message-ai {
+  @apply flex justify-start mb-3 animate-slide-up;
+}
+
+.bubble-user {
+  @apply glass-card bg-gradient-to-r from-purple-accent/40 to-purple-dark/30 max-w-xs md:max-w-md lg:max-w-lg break-words;
+}
+
+.bubble-ai {
+  @apply glass-card bg-glass-light/50 max-w-xs md:max-w-md lg:max-w-lg break-words;
+}
+
+/* ======================== */
+/* Code Block Styling       */
+/* ======================== */
+
+code {
+  @apply bg-deep-blue-light/50 px-2 py-1 rounded font-mono text-sm;
+}
+
+pre {
+  @apply bg-deep-blue-light border border-glass rounded-lg p-4 overflow-x-auto my-2 shadow-glass;
+}
+
+pre code {
+  @apply bg-transparent px-0 py-0 rounded-none;
+}
+
+/* ======================== */
+/* Button Animations        */
+/* ======================== */
+
+.btn-primary {
+  @apply px-6 py-2 rounded-lg bg-gradient-to-r from-purple-accent to-purple-dark text-white font-semibold hover:shadow-neon-purple transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply glass-button text-slate-50;
+}
+
+.btn-icon {
+  @apply p-2 rounded-lg hover:bg-glass-light transition-all duration-250 cursor-pointer;
+}
+
+/* ======================== */
+/* Loading & States         */
+/* ======================== */
+
+.skeleton {
+  @apply bg-glass-light rounded animate-pulse;
+}
+
+.typing-indicator {
+  @apply flex gap-1 items-center;
+}
+
+.typing-dot {
+  @apply w-2 h-2 bg-purple-accent rounded-full animate-pulse;
+}
+
+/* ======================== */
+/* Input Focus State        */
+/* ======================== */
+
+input:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-purple-accent/50;
+}
+
+textarea {
+  @apply glass-input resize-none;
+}
+
+/* ======================== */
+/* Sidebar Styling          */
+/* ======================== */
+
+.sidebar-item {
+  @apply px-4 py-2 rounded-lg cursor-pointer transition-all duration-250 hover:bg-glass-light;
+}
+
+.sidebar-item.active {
+  @apply bg-purple-accent/30 border-l-2 border-purple-accent;
+}
+
+/* ======================== */
+/* Responsive Design        */
+/* ======================== */
+
+@media (max-width: 768px) {
+  .bubble-user,
+  .bubble-ai {
+    @apply max-w-xs;
+  }
+
+  body {
+    @apply text-sm;
+  }
+}
+
+/* ======================== */
+/* Dark Mode Support        */
+/* ======================== */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gradient-mesh;
+  }
+
+  .glass-container,
+  .glass-card,
+  .glass-input {
+    @apply bg-glass-light/5 border-glass;
+  }
+}
+
+/* ======================== */
+/* Utility Classes          */
+/* ======================== */
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.max-h-full {
+  @apply max-h-[calc(100vh-100px)];
+}
+
+/* ======================== */
+/* Custom Animations        */
+/* ======================== */
+
+.float {
+  @apply animate-float;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, #1e1b4b 0%, #7c3aed 50%, #1e1b4b 100%);
+  background-size: 1000px 100%;
+}
